@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
+
 <head>
     <title>Calculator</title>
 </head>
+
 <body>
     <style>
-        button
-        {
+        button {
             width: 50px;
             height: 50px;
         }
-        </style>
-        <div>Calculator</div>
-        <input type="text" id="display" readonly style="font-size: 28px; text-align: right;"><br />
-        <script>
-            
+    </style>
+    <div>Calculator</div>
+    <input type="text" id="display" readonly style="font-size: 28px; text-align: right;"><br />
+    <script>
+
         let displayValue = '';
-let memoryValue = 0;
+        let memoryValue = 0;
 
-function appendToDisplay(value) {
-    displayValue += value;
-    document.getElementById('display').value = displayValue;
-}
+        function appendToDisplay(value) {
+            displayValue += value;
+            document.getElementById('display').value = displayValue;
+        }
 
-function clearDisplay() {
-    displayValue = '';
-    document.getElementById('display').value = '';
-}
+        function clearDisplay() {
+            displayValue = '';
+            document.getElementById('display').value = '';
+        }
 
-function calculate() {
-    try {
-        displayValue = eval(displayValue);
-        document.getElementById('display').value = displayValue;
-    } catch (error) {
-        document.getElementById('display').value = 'エラー';
-    }
-}
+        function calculate() {
+            try {
+                displayValue = eval(displayValue);
+                document.getElementById('display').value = displayValue;
+            } catch (error) {
+                document.getElementById('display').value = 'エラー';
+            }
+        }
 
-function addToMemory() {
-    memoryValue += parseFloat(displayValue);
-    clearDisplay();
-}
+        function addToMemory() {
+            memoryValue += parseFloat(displayValue);
+            clearDisplay();
+        }
 
-function subtractFromMemory() {
-    memoryValue -= parseFloat(displayValue);
-    clearDisplay();
-}
+        function subtractFromMemory() {
+            memoryValue -= parseFloat(displayValue);
+            clearDisplay();
+        }
 
-function recallMemory() {
-    displayValue = memoryValue.toString();
-    document.getElementById('display').value = displayValue;
-}
+        function recallMemory() {
+            displayValue = memoryValue.toString();
+            document.getElementById('display').value = displayValue;
+        }
 
-function clearMemory() {
-    memoryValue = 0;
-}
-</script>
-            <button onclick="addToMemory()">M+</button>
-            <button onclick="subtractFromMemory()">M-</button>
-            <button onclick="recallMemory()">MR</button>
-            <button onclick="clearMemory()">MC</button><br />
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button><br />
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('0')">0</button><br />
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            <button onclick="appendToDisplay( '*' )" >*</button>
-            <button onclick="appendToDisplay( '/' )" >/</button><br />
-            <button onclick="appendToDisplay( '**' )" >^</button>
-            <button onclick="appendToDisplay( '**0.5' )" >√</button>
-            <button onclick="calculate()" style="width:105px;">=</button>
-            <button onclick="clearDisplay()">C</button>
-            
-           
-   
+        function clearMemory() {
+            memoryValue = 0;
+        }
+    </script>
+    <button onclick="addToMemory()">M+</button>
+    <button onclick="subtractFromMemory()">M-</button>
+    <button onclick="recallMemory()">MR</button>
+    <button onclick="clearMemory()">MC</button><br />
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button><br />
+    <button onclick="appendToDisplay('6')">6</button>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button onclick="appendToDisplay('0')">0</button><br />
+    <button onclick="appendToDisplay('.')">.</button>
+    <button onclick="appendToDisplay('+')">+</button>
+    <button onclick="appendToDisplay('-')">-</button>
+    <button onclick="appendToDisplay( '*' )">*</button>
+    <button onclick="appendToDisplay( '/' )">/</button><br />
+    <button onclick="appendToDisplay( '**' )">^</button>
+    <button onclick="appendToDisplay( '**0.5' )">√</button>
+    <button onclick="calculate()" style="width:105px;">=</button>
+    <button onclick="clearDisplay()">C</button>
+
+
+
 </body>
+
 </html>
